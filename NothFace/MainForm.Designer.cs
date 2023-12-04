@@ -29,19 +29,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            Start = new Button();
             Stop = new Button();
             SuspendLayout();
             // 
-            // button1
+            // Start
             // 
-            button1.Location = new Point(12, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(211, 23);
-            button1.TabIndex = 0;
-            button1.Text = "Start";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += Start_Click;
+            Start.Location = new Point(12, 12);
+            Start.Name = "Start";
+            Start.Size = new Size(211, 23);
+            Start.TabIndex = 0;
+            Start.Text = "Start";
+            Start.UseVisualStyleBackColor = true;
+            Start.Click += Start_Click;
             // 
             // Stop
             // 
@@ -59,7 +59,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(234, 71);
             Controls.Add(Stop);
-            Controls.Add(button1);
+            Controls.Add(Start);
             Name = "Form1";
             Text = "TheNothFace";
             FormClosing += WindowUtile.TNF_FormClosing;
@@ -69,7 +69,7 @@
 
         #endregion
 
-        private Button button1;
+        private Button Start;
         private Button Stop;
     }
 }
