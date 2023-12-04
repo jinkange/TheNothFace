@@ -1,0 +1,16 @@
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\obj\Debug\net6.0-windows\NothFace.MainForm.resources
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\obj\Debug\net6.0-windows\NothFace.csproj.GenerateResource.cache
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\obj\Debug\net6.0-windows\NothFace.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\obj\Debug\net6.0-windows\NothFace.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\obj\Debug\net6.0-windows\NothFace.AssemblyInfo.cs
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\obj\Debug\net6.0-windows\NothFace.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\bin\Debug\net6.0-windows\NothFace.exe
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\bin\Debug\net6.0-windows\NothFace.deps.json
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\bin\Debug\net6.0-windows\NothFace.runtimeconfig.json
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\bin\Debug\net6.0-windows\NothFace.dll
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\bin\Debug\net6.0-windows\NothFace.pdb
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\obj\Debug\net6.0-windows\NothFace.dll
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\obj\Debug\net6.0-windows\refint\NothFace.dll
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\obj\Debug\net6.0-windows\NothFace.pdb
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\obj\Debug\net6.0-windows\NothFace.genruntimeconfig.cache
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\obj\Debug\net6.0-windows\ref\NothFace.dll
