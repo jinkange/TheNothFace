@@ -39,6 +39,20 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "OpenCvSharp3-AnyCPU": {
+              "target": "Package",
+              "version": "[4.0.0.20181129, )"
+            },
+            "OpenCvSharp4": {
+              "target": "Package",
+              "version": "[4.8.0.20230708, )"
+            },
+            "OpenCvSharp4.runtime.win": {
+              "target": "Package",
+              "version": "[4.8.0.20230708, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

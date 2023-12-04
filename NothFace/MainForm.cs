@@ -6,6 +6,7 @@ namespace NothFace
         private readonly KeyboardUtile keyboardUtile;
         private readonly WindowUtile windowUtile;
 
+        System.Threading.Thread TrackWorkthread;
 
         public MainForm()
         {
