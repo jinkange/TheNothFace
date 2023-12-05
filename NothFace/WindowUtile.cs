@@ -44,18 +44,18 @@ namespace NothFace
                 IntPtr findwindow = FindWindow(null, AppPlayerName);
                 if (!findwindow.Equals(IntPtr.Zero))
                 {
-                    return 55;
+                    return 0;
                 }
                 else
                 {
-                    return 12;
+                    return 1;
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine("wc");
                 Console.WriteLine(e.Message, ToString());
-                return 12;
+                return 1;
             }
         }
 

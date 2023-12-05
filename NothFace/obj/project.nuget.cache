@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "yE+6AMLLc3pv7R3pKDUxKVTXs1wUO/1R+uANcK98rDQYIkb1PniwyxDP8SDtbxVSVj6HjQ9ciVveMzq9l+ZSTQ==",
+  "dgSpecHash": "IrtVZm/8aSYlIvSu6vGw88rCAthrveSSy4CjJB6TZkTQK2egjn3oW33swt1ivTOW2mQZuLUKwd8xZ9FiMsnq6g==",
   "success": true,
   "projectFilePath": "C:\\Users\\jinkange\\Desktop\\my_project\\TheNothFace\\NothFace\\NothFace.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\jinkange\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\jinkange\\.nuget\\packages\\microsoft.win32.systemevents\\4.5.0\\microsoft.win32.systemevents.4.5.0.nupkg.sha512",
+    "C:\\Users\\jinkange\\.nuget\\packages\\opencvsharp3-anycpu\\4.0.0.20181129\\opencvsharp3-anycpu.4.0.0.20181129.nupkg.sha512",
+    "C:\\Users\\jinkange\\.nuget\\packages\\system.drawing.common\\4.5.0\\system.drawing.common.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

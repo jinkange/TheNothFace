@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\NothFace"
   ],
-  "SelectedNode": "\\Discord.sln",
+  "SelectedNode": "\\NothFace\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
