@@ -50,7 +50,7 @@ namespace NothFace
         }
         public void InClick2(int x, int y, int range_x, int range_y)
         {
-            MouseSetPosNclick3(x, y, range_x, range_y);
+            MouseSetPosNclick2(x, y);
         }
 
 
@@ -58,11 +58,7 @@ namespace NothFace
         {
             try
             {
-                Random rx = new Random();
-                Random ry = new Random();
-                int locx = rx.Next(0, 10);
-                int locy = ry.Next(0, 10);
-                SetCursorPos(x + locx, y + locy);
+                SetCursorPos(x, y);
                 stoppeing_event_.WaitOne(interval_);
                 MouseClick_now();
             }
@@ -77,11 +73,7 @@ namespace NothFace
         {
             try
             {
-                Random rx = new Random();
-                Random ry = new Random();
-                int locx = rx.Next(0, 10);
-                int locy = ry.Next(0, 10);
-                SetCursorPos(x + locx, y + locy);
+                SetCursorPos(x, y);
                 Thread.Sleep(100);
                 stoppeing_event_.WaitOne(interval_);
                 MouseClick_now();

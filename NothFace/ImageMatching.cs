@@ -32,13 +32,13 @@ namespace NothFace
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("im1");
+                        Console.WriteLine("이미지 경로 찾기 실패");
                         Console.WriteLine(e.Message, ToString());
                         check_img = new Bitmap(10, 10);
                         bmp = new Bitmap(10, 10);
                         check_img.Dispose();
                         bmp.Dispose();
-                        return 11;
+                        return 1;
                     }
 
                     try
@@ -78,27 +78,27 @@ namespace NothFace
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("im2");
+                        Console.WriteLine("이미지 매칭 실패");
                         Console.WriteLine(state);
                         Console.WriteLine(e.Message, ToString());
                         check_img = new Bitmap(10, 10);
                         bmp = new Bitmap(10, 10);
                         check_img.Dispose();
                         bmp.Dispose();
-                        return 11;
+                        return 1;
                     }
                 }
                 else
                 {
 
-                    return 11;
+                    return 1;
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine("im3");
+                Console.WriteLine("이미지 매칭 전체 오류");
                 Console.WriteLine(e.Message, ToString());
-                return 11;
+                return 1;
             }
         }
 
@@ -117,9 +117,6 @@ namespace NothFace
 
                     if (maxval >= 0.8)
                     {
-                        Random Rand_Time = new Random();
-                        int Set_Rand_Time = Rand_Time.Next(0, 100);
-                        Thread.Sleep(Set_Rand_Time);
                         mouseUtile.InClick2(maxloc.X + startx, maxloc.Y + starty, range_x, range_y);
                     }
                     ScreenMat.Dispose();
@@ -131,7 +128,7 @@ namespace NothFace
             }
             catch (Exception e)
             {
-                Console.WriteLine("ts1");
+                Console.WriteLine("이미시 서치 실패");
                 Console.WriteLine(e.Message, ToString());
 
                 screen_img.Dispose();

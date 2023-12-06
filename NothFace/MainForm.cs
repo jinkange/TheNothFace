@@ -5,7 +5,7 @@ namespace NothFace
         private readonly MouseUtile mouseUtile;
         private readonly KeyboardUtile keyboardUtile;
         private readonly WindowUtile windowUtile;
-
+        private readonly ImageMatching imageMatching;
         System.Threading.Thread TrackWorkthread;
 
         public MainForm()
