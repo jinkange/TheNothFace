@@ -10,8 +10,11 @@
 
   <ItemGroup>
     <PackageReference Include="OpenCvSharp3-AnyCPU" Version="4.0.0.20181129" />
+<<<<<<< HEAD
     <PackageReference Include="OpenCvSharp4" Version="4.8.0.20230708" />
     <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.8.0.20230708" />
+=======
+>>>>>>> ab9f04dcbff1a1117948fa2953e638cf74bb3b4c
   </ItemGroup>
 
 </Project>

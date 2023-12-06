@@ -1,17 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "A8NQM93do/CpEvmEO27/aYcRPeVhJ0T2tw3MW0UWtvEazgrR5ov1sHjZn/Gr8ILj+6qSJRwkza+26eVMBxs5aw==",
+  "dgSpecHash": "IrtVZm/8aSYlIvSu6vGw88rCAthrveSSy4CjJB6TZkTQK2egjn3oW33swt1ivTOW2mQZuLUKwd8xZ9FiMsnq6g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\Desktop\\개인자료\\개인개발\\NothFace\\NothFace\\NothFace.csproj",
+  "projectFilePath": "C:\\Users\\jinkange\\Desktop\\my_project\\TheNothFace\\NothFace\\NothFace.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\microsoft.win32.systemevents\\4.5.0\\microsoft.win32.systemevents.4.5.0.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\opencvsharp3-anycpu\\4.0.0.20181129\\opencvsharp3-anycpu.4.0.0.20181129.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\opencvsharp4\\4.8.0.20230708\\opencvsharp4.4.8.0.20230708.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\opencvsharp4.runtime.win\\4.8.0.20230708\\opencvsharp4.runtime.win.4.8.0.20230708.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\system.drawing.common\\4.5.0\\system.drawing.common.4.5.0.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\jinkange\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\jinkange\\.nuget\\packages\\microsoft.win32.systemevents\\4.5.0\\microsoft.win32.systemevents.4.5.0.nupkg.sha512",
+    "C:\\Users\\jinkange\\.nuget\\packages\\opencvsharp3-anycpu\\4.0.0.20181129\\opencvsharp3-anycpu.4.0.0.20181129.nupkg.sha512",
+    "C:\\Users\\jinkange\\.nuget\\packages\\system.drawing.common\\4.5.0\\system.drawing.common.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

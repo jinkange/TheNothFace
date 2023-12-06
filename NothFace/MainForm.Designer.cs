@@ -29,23 +29,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            Start = new Button();
             Stop = new Button();
+            passwordBox = new TextBox();
+            passwordText = new Label();
+            countText = new Label();
+            countBox = new TextBox();
+            macroIdBox = new TextBox();
+            macroIdText = new Label();
             SuspendLayout();
             // 
-            // button1
+            // Start
             // 
-            button1.Location = new Point(12, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(211, 23);
-            button1.TabIndex = 0;
-            button1.Text = "Start";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += Start_Click;
+            Start.Location = new Point(11, 94);
+            Start.Name = "Start";
+            Start.Size = new Size(211, 23);
+            Start.TabIndex = 0;
+            Start.Text = "Start";
+            Start.UseVisualStyleBackColor = true;
+            Start.Click += Start_Click;
             // 
             // Stop
             // 
-            Stop.Location = new Point(12, 41);
+            Stop.Location = new Point(12, 123);
             Stop.Name = "Stop";
             Stop.Size = new Size(210, 23);
             Stop.TabIndex = 1;
@@ -53,23 +59,92 @@
             Stop.UseVisualStyleBackColor = true;
             Stop.Click += Stop_Click;
             // 
-            // Form1
+            // passwordBox
+            // 
+            passwordBox.Location = new Point(122, 36);
+            passwordBox.Name = "passwordBox";
+            passwordBox.PlaceholderText = "6자리숫자";
+            passwordBox.Size = new Size(100, 23);
+            passwordBox.TabIndex = 2;
+            passwordBox.TextChanged += textBox1_TextChanged;
+            // 
+            // passwordText
+            // 
+            passwordText.AutoSize = true;
+            passwordText.Location = new Point(12, 39);
+            passwordText.Name = "passwordText";
+            passwordText.Size = new Size(55, 15);
+            passwordText.TabIndex = 3;
+            passwordText.Text = "비밀번호";
+            passwordText.Click += password_Click;
+            // 
+            // countText
+            // 
+            countText.AutoSize = true;
+            countText.Location = new Point(11, 68);
+            countText.Name = "countText";
+            countText.Size = new Size(55, 15);
+            countText.TabIndex = 4;
+            countText.Text = "구매수량";
+            countText.Click += count_Click;
+            // 
+            // countBox
+            // 
+            countBox.Location = new Point(122, 65);
+            countBox.Name = "countBox";
+            countBox.Size = new Size(100, 23);
+            countBox.TabIndex = 5;
+            countBox.TextChanged += textBox2_TextChanged;
+            // 
+            // macroIdBox
+            // 
+            macroIdBox.Location = new Point(122, 6);
+            macroIdBox.MaxLength = 1;
+            macroIdBox.Name = "macroIdBox";
+            macroIdBox.PlaceholderText = "1~3";
+            macroIdBox.Size = new Size(100, 23);
+            macroIdBox.TabIndex = 6;
+            macroIdBox.TextChanged += macroId_TextChanged;
+            // 
+            // macroIdText
+            // 
+            macroIdText.AutoSize = true;
+            macroIdText.Location = new Point(12, 9);
+            macroIdText.Name = "macroIdText";
+            macroIdText.Size = new Size(67, 15);
+            macroIdText.TabIndex = 7;
+            macroIdText.Text = "매크로번호";
+            macroIdText.Click += id_Click;
+            // 
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(234, 71);
+            ClientSize = new Size(234, 156);
+            Controls.Add(macroIdText);
+            Controls.Add(macroIdBox);
+            Controls.Add(countBox);
+            Controls.Add(countText);
+            Controls.Add(passwordText);
+            Controls.Add(passwordBox);
             Controls.Add(Stop);
-            Controls.Add(button1);
-            Name = "Form1";
+            Controls.Add(Start);
+            Name = "MainForm";
             Text = "TheNothFace";
-            FormClosing += WindowUtile.TNF_FormClosing;
             Load += Form1_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
+        private Button Start;
         private Button Stop;
+        private TextBox passwordBox;
+        private Label passwordText;
+        private Label countText;
+        private TextBox countBox;
+        private TextBox macroIdBox;
+        private Label macroIdText;
     }
 }
