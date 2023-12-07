@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NothFace", "NothFace\NothFace.csproj", "{979F0BBA-408D-4620-AE19-E48C889AA06E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NothFace", "NothFace\NothFace.csproj", "{979F0BBA-408D-4620-AE19-E48C889AA06E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "솔루션 항목", "솔루션 항목", "{E6D89952-BB3F-40C1-AB5C-FA4BEDC38351}"
+	ProjectSection(SolutionItems) = preProject
+		packages\OpenCvSharp4.4.2.0.20200108\lib\net461\OpenCvSharp.dll = packages\OpenCvSharp4.4.2.0.20200108\lib\net461\OpenCvSharp.dll
+		NothFace\OpenCvSharpExtern.dll = NothFace\OpenCvSharpExtern.dll
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
