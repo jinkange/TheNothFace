@@ -8,65 +8,74 @@
     ".NETCoreApp,Version=v6.0": {
       "NothFace/1.0.0": {
         "dependencies": {
-          "OpenCvSharp3-AnyCPU": "4.0.0.20181129"
+          "OpenCvSharp4": "4.8.0.20230708",
+          "OpenCvSharp4.Extensions": "4.8.0.20230708"
         },
         "runtime": {
           "NothFace.dll": {}
         }
       },
-      "Microsoft.NETCore.Platforms/2.0.0": {},
-      "Microsoft.Win32.SystemEvents/4.5.0": {
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "2.0.0"
-        }
-      },
-      "OpenCvSharp3-AnyCPU/4.0.0.20181129": {
-        "dependencies": {
-          "System.Drawing.Common": "4.5.0"
-        },
+      "Microsoft.Win32.SystemEvents/7.0.0": {
         "runtime": {
-          "lib/netstandard2.0/OpenCvSharp.Blob.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          },
-          "lib/netstandard2.0/OpenCvSharp.Extensions.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          },
-          "lib/netstandard2.0/OpenCvSharp.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
           }
         },
         "runtimeTargets": {
-          "runtimes/win10-x64/native/OpenCvSharpExtern.dll": {
-            "rid": "win10-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win10-x64/native/opencv_ffmpeg400_64.dll": {
-            "rid": "win10-x64",
-            "assetType": "native",
-            "fileVersion": "2018.11.0.0"
-          },
-          "runtimes/win10-x86/native/OpenCvSharpExtern.dll": {
-            "rid": "win10-x86",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win10-x86/native/opencv_ffmpeg400.dll": {
-            "rid": "win10-x86",
-            "assetType": "native",
-            "fileVersion": "2018.11.0.0"
+          "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
           }
         }
       },
-      "System.Drawing.Common/4.5.0": {
+      "OpenCvSharp4/4.8.0.20230708": {
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "2.0.0",
-          "Microsoft.Win32.SystemEvents": "4.5.0"
+          "System.Memory": "4.5.5",
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/OpenCvSharp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
-      }
+      },
+      "OpenCvSharp4.Extensions/4.8.0.20230708": {
+        "dependencies": {
+          "OpenCvSharp4": "4.8.0.20230708",
+          "System.Drawing.Common": "7.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/OpenCvSharp.Extensions.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "System.Drawing.Common/7.0.0": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "7.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/System.Drawing.Common.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
+      "System.Memory/4.5.5": {},
+      "System.Runtime.CompilerServices.Unsafe/6.0.0": {}
     }
   },
   "libraries": {
@@ -75,33 +84,47 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.NETCore.Platforms/2.0.0": {
+    "Microsoft.Win32.SystemEvents/7.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-VdLJOCXhZaEMY7Hm2GKiULmn7IEPFE4XC5LPSfBVCUIA8YLZVh846gtfBJalsPQF2PlzdD7ecX7DZEulJ402ZQ==",
-      "path": "microsoft.netcore.platforms/2.0.0",
-      "hashPath": "microsoft.netcore.platforms.2.0.0.nupkg.sha512"
+      "sha512": "sha512-2nXPrhdAyAzir0gLl8Yy8S5Mnm/uBSQQA7jEsILOS1MTyS7DbmV1NgViMtvV1sfCD1ebITpNwb1NIinKeJgUVQ==",
+      "path": "microsoft.win32.systemevents/7.0.0",
+      "hashPath": "microsoft.win32.systemevents.7.0.0.nupkg.sha512"
     },
-    "Microsoft.Win32.SystemEvents/4.5.0": {
+    "OpenCvSharp4/4.8.0.20230708": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-LuI1oG+24TUj1ZRQQjM5Ew73BKnZE5NZ/7eAdh1o8ST5dPhUnJvIkiIn2re3MwnkRy6ELRnvEbBxHP8uALKhJw==",
-      "path": "microsoft.win32.systemevents/4.5.0",
-      "hashPath": "microsoft.win32.systemevents.4.5.0.nupkg.sha512"
+      "sha512": "sha512-MmZqvNUJuTUWQfkyXN1NOxJjx6JNfaedMOnY0dAdP5zgaKMAsxwwX5pkZl/F40JheSo3oMJhI7nhDC3kh7/ISQ==",
+      "path": "opencvsharp4/4.8.0.20230708",
+      "hashPath": "opencvsharp4.4.8.0.20230708.nupkg.sha512"
     },
-    "OpenCvSharp3-AnyCPU/4.0.0.20181129": {
+    "OpenCvSharp4.Extensions/4.8.0.20230708": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-fAXJW98FU3ZAlS3LDrRAXeg7h5ufA9Z1mAQNsXIPSTQHS+Ql2+KdzdYXs+p+lZhyH9baJWPDB42E+EN1KJ0Y3w==",
-      "path": "opencvsharp3-anycpu/4.0.0.20181129",
-      "hashPath": "opencvsharp3-anycpu.4.0.0.20181129.nupkg.sha512"
+      "sha512": "sha512-nMX2ZFI+cAIp7q2UoaHFSzBD9xJgr/TyZ9dDOuDS0K2BNCdOYqT8TbXWIGCIXpcLZLn2seoy5r4ZlGaJsyREYg==",
+      "path": "opencvsharp4.extensions/4.8.0.20230708",
+      "hashPath": "opencvsharp4.extensions.4.8.0.20230708.nupkg.sha512"
     },
-    "System.Drawing.Common/4.5.0": {
+    "System.Drawing.Common/7.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-AiJFxxVPdeITstiRS5aAu8+8Dpf5NawTMoapZ53Gfirml24p7HIfhjmCRxdXnmmf3IUA3AX3CcW7G73CjWxW/Q==",
-      "path": "system.drawing.common/4.5.0",
-      "hashPath": "system.drawing.common.4.5.0.nupkg.sha512"
+      "sha512": "sha512-KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
+      "path": "system.drawing.common/7.0.0",
+      "hashPath": "system.drawing.common.7.0.0.nupkg.sha512"
+    },
+    "System.Memory/4.5.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw==",
+      "path": "system.memory/4.5.5",
+      "hashPath": "system.memory.4.5.5.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
+      "path": "system.runtime.compilerservices.unsafe/6.0.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
     }
   }
 }

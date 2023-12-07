@@ -1,22 +1,137 @@
 ﻿using OpenCvSharp;
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 
 namespace NothFace
 {
     internal class ImageMatching
     {
-        private MouseUtile mouseUtile = new MouseUtile();
-
+        public MouseUtile mouseUtile;
+        string macroId;
         [System.Runtime.InteropServices.DllImport("User32", EntryPoint = "FindWindow")]
         private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         internal static extern bool PrintWindow(IntPtr hWnd, IntPtr hdcBlt, int nFlags);
-        
-
-        public int Image_Match(string state, string url, string AppPlayerName, int startx, int starty, int width, int height)
+        public ImageMatching(TextBox id) {
+            this.macroId = id.Text;
+            mouseUtile = new MouseUtile(id);
+        }
+        private void errorCheck() {
+            if (this.ImageMatch("결제하기", "", "TheNothFace" + macroId, 0, 0, 0, 0)) {
+                MessageBox.Show("일시적오류");
+            }
+        }
+        public bool ImageMatchClick(string name, string url, string AppPlayerName, int x, int y, int width, int height)
         {
+            try
+            {
+                IntPtr findwindow = FindWindow(null, AppPlayerName);
+                if (findwindow != IntPtr.Zero)
+                {
+                    Bitmap server_img = null;
+                    Bitmap bmp = null;
+                    try
+                    {
+                        server_img = new Bitmap(System.Windows.Forms.Application.StartupPath + @"img\" + url + name + ".PNG");
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.WriteLine("이미지 못찾음");
+                        Debug.WriteLine(System.Windows.Forms.Application.StartupPath + @"img\" + url + name + ".PNG");
+                        Debug.WriteLine(e.Message, ToString());
+                        server_img = new Bitmap(10, 10);
+                        bmp = new Bitmap(10, 10);
+                        server_img.Dispose();
+                        bmp.Dispose();
+                        return false;
+                    }
+                    try
+                    {
+                        Graphics Graphicsdata = Graphics.FromHwnd(findwindow);
+                        Rectangle rect = Rectangle.Round(Graphicsdata.VisibleClipBounds);
+                        bmp = new Bitmap(rect.Width, rect.Height);
+                        using (Graphics g = Graphics.FromImage(bmp))
+                        {
+                            IntPtr hdc = g.GetHdc();
+                            PrintWindow(findwindow, hdc, 0x2);
+                            g.ReleaseHdc(hdc);
+                        }
+                        if (x != 0 || y != 0 || width != 0 || height != 0)
+                        {
+                            Bitmap bmp2 = null;
+                            bmp2 = bmp.Clone(new System.Drawing.Rectangle(x, y, width, height), bmp.PixelFormat);
+                            bmp.Dispose();
+                            if (TrySearch(bmp2, server_img, x, y, server_img.Width, server_img.Height))
+                            {
+                                server_img = new Bitmap(10, 10);
+                                bmp = new Bitmap(10, 10);
+                                server_img.Dispose();
+                                bmp2.Dispose();
+                                return true;
+                            }
+                            else
+                            {
+                                server_img = new Bitmap(10, 10);
+                                bmp = new Bitmap(10, 10);
+                                server_img.Dispose();
+                                bmp2.Dispose();
+                                return false;
+                            }
+
+
+                        }
+                        else
+                        {
+                            if (TrySearch(bmp, server_img, x, y, server_img.Width, server_img.Height))
+                            {
+                                server_img = new Bitmap(10, 10);
+                                bmp = new Bitmap(10, 10);
+                                server_img.Dispose();
+                                bmp.Dispose();
+                                return true;
+                            }
+                            else {
+                                server_img = new Bitmap(10, 10);
+                                bmp = new Bitmap(10, 10);
+                                server_img.Dispose();
+                                bmp.Dispose();
+                                return false;
+                            }
+                        }
+
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.WriteLine(name);
+                        Debug.WriteLine("이미지 매칭 전체 오류");
+                        Debug.WriteLine(e.Message, ToString());
+                        server_img = new Bitmap(10, 10);
+                        bmp = new Bitmap(10, 10);
+                        server_img.Dispose();
+                        bmp.Dispose();
+                        return false;
+
+                    }
+                }
+                else {
+                    Debug.WriteLine("핸들 못찾음");
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine("이미지 매칭 전체 오류");
+                Debug.WriteLine(System.Windows.Forms.Application.StartupPath + @"\img\" + url + name + ".PNG");
+                Debug.WriteLine(e.Message, ToString());
+                return false;
+            }
+        }
+
+        public bool ImageMatch(string name, string url, string AppPlayerName, int startx, int starty, int width, int height)
+        {
+            Debug.WriteLine(name + "찾기");
             try
             {
                 IntPtr findwindow = FindWindow(null, AppPlayerName);
@@ -27,18 +142,18 @@ namespace NothFace
                     Bitmap bmp = null;
                     try
                     {
-                        check_img = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\img\" + url + state + ".PNG");
+                        check_img = new Bitmap(System.Windows.Forms.Application.StartupPath + @"\img\" + url + name + ".PNG");
 
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("이미지 경로 찾기 실패");
-                        Console.WriteLine(e.Message, ToString());
+                        Debug.WriteLine("이미지 경로 찾기 실패");
+                        Debug.WriteLine(e.Message, ToString());
                         check_img = new Bitmap(10, 10);
                         bmp = new Bitmap(10, 10);
                         check_img.Dispose();
                         bmp.Dispose();
-                        return 1;
+                        return false;
                     }
 
                     try
@@ -58,7 +173,7 @@ namespace NothFace
                             Bitmap bmp2 = null;
                             bmp2 = bmp.Clone(new System.Drawing.Rectangle(startx, starty, width, height), bmp.PixelFormat);
                             bmp.Dispose();
-                            int result = TrySearch_image(bmp2, check_img);
+                            bool result = TrySearch_image(bmp2, check_img);
                             check_img = new Bitmap(10, 10);
                             bmp = new Bitmap(10, 10);
                             bmp2.Dispose();
@@ -67,7 +182,7 @@ namespace NothFace
                         }
                         else
                         {
-                            int result = TrySearch_image(bmp, check_img);
+                            bool result = TrySearch_image(bmp, check_img);
                             check_img = new Bitmap(10, 10);
                             bmp = new Bitmap(10, 10);
                             bmp.Dispose();
@@ -78,33 +193,32 @@ namespace NothFace
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("이미지 매칭 실패");
-                        Console.WriteLine(state);
-                        Console.WriteLine(e.Message, ToString());
+                        Debug.WriteLine("이미지 매칭 실패");
+                        Debug.WriteLine(name);
+                        Debug.WriteLine(e.Message, ToString());
                         check_img = new Bitmap(10, 10);
                         bmp = new Bitmap(10, 10);
                         check_img.Dispose();
                         bmp.Dispose();
-                        return 1;
+                        return false;
                     }
                 }
                 else
                 {
 
-                    return 1;
+                    return false;
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine("이미지 매칭 전체 오류");
-                Console.WriteLine(e.Message, ToString());
-                return 1;
+                Debug.WriteLine("이미지 매칭 전체 오류");
+                Debug.WriteLine(e.Message, ToString());
+                return false;
             }
         }
 
-        public void TrySearch(Bitmap screen_img, Bitmap find_img, int startx, int starty, int range_x, int range_y)
+        public bool TrySearch(Bitmap screen_img, Bitmap find_img, int startx, int starty, int range_x, int range_y)
         {
-
             try
             {
                 using (Mat ScreenMat = OpenCvSharp.Extensions.BitmapConverter.ToMat(screen_img))
@@ -114,32 +228,43 @@ namespace NothFace
                     double minval, maxval = 0;
                     OpenCvSharp.Point minloc, maxloc;
                     Cv2.MinMaxLoc(res, out minval, out maxval, out minloc, out maxloc);
-
+                    Debug.WriteLine("이미시 매칭률 : " + maxval);
                     if (maxval >= 0.8)
                     {
-                        mouseUtile.InClick2(maxloc.X + startx, maxloc.Y + starty, range_x, range_y);
+                        mouseUtile.InClick(maxloc.X + startx, maxloc.Y + starty);
+                        ScreenMat.Dispose();
+                        FindMat.Dispose();
+                        res.Dispose();
+                        screen_img.Dispose();
+                        find_img.Dispose();
+                        return true;
                     }
-                    ScreenMat.Dispose();
-                    FindMat.Dispose();
-                    res.Dispose();
-                    screen_img.Dispose();
-                    find_img.Dispose();
+                    else {
+                        ScreenMat.Dispose();
+                        FindMat.Dispose();
+                        res.Dispose();
+                        screen_img.Dispose();
+                        find_img.Dispose();
+                        return false;
+                    }
+
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine("이미시 서치 실패");
-                Console.WriteLine(e.Message, ToString());
+                Debug.WriteLine("이미시 서치 실패");
+                Debug.WriteLine(e.Message, ToString());
 
                 screen_img.Dispose();
                 find_img.Dispose();
+                return false;
             }
             finally
             {
             }
         }
 
-        public int TrySearch_image(Bitmap screen_img, Bitmap find_img)
+        public bool TrySearch_image(Bitmap screen_img, Bitmap find_img)
         {
 
             try
@@ -151,8 +276,8 @@ namespace NothFace
                     double minval, maxval = 0;
                     OpenCvSharp.Point minloc, maxloc;
                     Cv2.MinMaxLoc(res, out minval, out maxval, out minloc, out maxloc);
-
-                    if (maxval >= 0.8)
+                    Debug.WriteLine("이미시 매칭률 : " + maxval);
+                    if (maxval >= 0.9)
                     {
                         Random Rand_Time = new Random();
                         int Set_Rand_Time = Rand_Time.Next(0, 100);
@@ -162,7 +287,7 @@ namespace NothFace
                         res.Dispose();
                         screen_img.Dispose();
                         find_img.Dispose();
-                        return 44;
+                        return true;
                     }
                     else
                     {
@@ -171,18 +296,18 @@ namespace NothFace
                         res.Dispose();
                         screen_img.Dispose();
                         find_img.Dispose();
-                        return 11;
+                        return false;
                     }
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine("tsi");
-                Console.WriteLine(e.Message, ToString());
+                Debug.WriteLine("tsi");
+                Debug.WriteLine(e.Message, ToString());
 
                 screen_img.Dispose();
                 find_img.Dispose();
-                return 11;
+                return false;
             }
             finally
             {
@@ -204,12 +329,12 @@ namespace NothFace
                     OpenCvSharp.Point minloc, maxloc;
                     Cv2.MinMaxLoc(res, out minval, out maxval, out minloc, out maxloc);
 
-                    if (maxval >= 0.8)
+                    if (maxval >= 0.9)
                     {
                         Random Rand_Time = new Random();
                         int Set_Rand_Time = Rand_Time.Next(0, 100);
                         Thread.Sleep(Set_Rand_Time);
-                        mouseUtile.InClick2(x + startx, y + starty, range_x, range_y);
+                        mouseUtile.InClick(x + startx, y + starty);
                     }
                     ScreenMat.Dispose();
                     FindMat.Dispose();
@@ -220,8 +345,8 @@ namespace NothFace
             }
             catch (Exception e)
             {
-                Console.WriteLine("tsm");
-                Console.WriteLine(e.Message, ToString());
+                Debug.WriteLine("tsm");
+                Debug.WriteLine(e.Message, ToString());
 
                 screen_img.Dispose();
                 find_img.Dispose();

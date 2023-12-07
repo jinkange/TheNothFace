@@ -37,11 +37,13 @@
             countBox = new TextBox();
             macroIdBox = new TextBox();
             macroIdText = new Label();
+            sizeText = new Label();
+            sizeBox = new TextBox();
             SuspendLayout();
             // 
             // Start
             // 
-            Start.Location = new Point(11, 94);
+            Start.Location = new Point(12, 156);
             Start.Name = "Start";
             Start.Size = new Size(211, 23);
             Start.TabIndex = 0;
@@ -51,7 +53,7 @@
             // 
             // Stop
             // 
-            Stop.Location = new Point(12, 123);
+            Stop.Location = new Point(12, 185);
             Stop.Name = "Stop";
             Stop.Size = new Size(210, 23);
             Stop.TabIndex = 1;
@@ -116,11 +118,31 @@
             macroIdText.Text = "매크로번호";
             macroIdText.Click += id_Click;
             // 
+            // sizeText
+            // 
+            sizeText.AutoSize = true;
+            sizeText.Location = new Point(12, 97);
+            sizeText.Name = "sizeText";
+            sizeText.Size = new Size(43, 15);
+            sizeText.TabIndex = 8;
+            sizeText.Text = "사이즈";
+            // 
+            // sizeBox
+            // 
+            sizeBox.Location = new Point(122, 94);
+            sizeBox.Name = "sizeBox";
+            sizeBox.PlaceholderText = "xs,s,m,l,xl,xxl";
+            sizeBox.Size = new Size(100, 23);
+            sizeBox.TabIndex = 9;
+            sizeBox.TextChanged += textBox1_TextChanged_1;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(234, 156);
+            ClientSize = new Size(234, 220);
+            Controls.Add(sizeBox);
+            Controls.Add(sizeText);
             Controls.Add(macroIdText);
             Controls.Add(macroIdBox);
             Controls.Add(countBox);
@@ -146,5 +168,7 @@
         private TextBox countBox;
         private TextBox macroIdBox;
         private Label macroIdText;
+        private Label sizeText;
+        private TextBox sizeBox;
     }
 }

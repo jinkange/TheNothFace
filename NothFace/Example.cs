@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
@@ -2142,6 +2143,7 @@ namespace Discord
                 billionCheck1 = 1;
             }
             */
+/*
             if (Image_Match("100억콤마", "\\subs\\", WindowHandler, 1393, 748, 43, 60) == 44)
             {
                 //여기에 콤마가 있으면 10억이상
@@ -2997,5 +2999,5 @@ namespace Discord
 
     }
 }
-
+*/
 
