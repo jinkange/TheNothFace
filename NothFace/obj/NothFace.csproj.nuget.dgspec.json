@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jinkange\\Desktop\\my_project\\TheNothFace\\NothFace\\NothFace.csproj": {}
+    "C:\\Users\\User\\Desktop\\개인자료\\개인개발\\NothFace\\NothFace\\NothFace.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jinkange\\Desktop\\my_project\\TheNothFace\\NothFace\\NothFace.csproj": {
+    "C:\\Users\\User\\Desktop\\개인자료\\개인개발\\NothFace\\NothFace\\NothFace.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jinkange\\Desktop\\my_project\\TheNothFace\\NothFace\\NothFace.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\개인자료\\개인개발\\NothFace\\NothFace\\NothFace.csproj",
         "projectName": "NothFace",
-        "projectPath": "C:\\Users\\jinkange\\Desktop\\my_project\\TheNothFace\\NothFace\\NothFace.csproj",
-        "packagesPath": "C:\\Users\\jinkange\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jinkange\\Desktop\\my_project\\TheNothFace\\NothFace\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\개인자료\\개인개발\\NothFace\\NothFace\\NothFace.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\개인자료\\개인개발\\NothFace\\NothFace\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jinkange\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,9 +40,13 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
-            "OpenCvSharp3-AnyCPU": {
+            "OpenCvSharp4": {
               "target": "Package",
-              "version": "[4.0.0.20181129, )"
+              "version": "[4.8.0.20230708, )"
+            },
+            "OpenCvSharp4.Extensions": {
+              "target": "Package",
+              "version": "[4.8.0.20230708, )"
             }
           },
           "imports": [
@@ -64,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

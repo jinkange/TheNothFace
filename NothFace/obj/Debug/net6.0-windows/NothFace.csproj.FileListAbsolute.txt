@@ -43,4 +43,12 @@ C:\Users\jinkange\Desktop\my_project\TheNothFace\NothFace\bin\Debug\net6.0-windo
 C:\Users\jinkange\Desktop\my_project\TheNothFace\NothFace\obj\Debug\net6.0-windows\NothFace.csproj.CopyComplete
 C:\Users\jinkange\Desktop\my_project\TheNothFace\NothFace\obj\Debug\net6.0-windows\NothFace.genruntimeconfig.cache
 C:\Users\jinkange\Desktop\my_project\TheNothFace\NothFace\obj\Debug\net6.0-windows\ref\NothFace.dll
-C:\Users\jinkange\Desktop\my_project\TheNothFace\NothFace\bin\Debug\net6.0-windows\OpenCvSharpExtern.dll
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\obj\Debug\net6.0-windows\NothFace.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\bin\Debug\net6.0-windows\OpenCvSharp.Extensions.dll
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\bin\Debug\net6.0-windows\OpenCvSharp.dll
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\obj\Debug\net6.0-windows\NothFace.csproj.CopyComplete
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\bin\Debug\net6.0-windows\Microsoft.Win32.SystemEvents.dll
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\bin\Debug\net6.0-windows\System.Drawing.Common.dll
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\User\Desktop\개인자료\개인개발\NothFace\NothFace\bin\Debug\net6.0-windows\OpenCvSharpExtern.dll
