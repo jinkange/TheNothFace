@@ -22,8 +22,8 @@ namespace NothFace
         private readonly ManualResetEvent stoppeing_event_ = new ManualResetEvent(false);
     TimeSpan interval_;
         
-    public MouseUtile(TextBox macroId){
-        this.addX = 540 * (int.Parse(macroId.Text)-1);
+    public MouseUtile(string id){
+        this.addX = 540 * (int.Parse(id) -1);
     }
         
       
