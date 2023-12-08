@@ -102,6 +102,7 @@ namespace NothFace
             Thread.Sleep(100);
             imageMatching.ImageMatchClick("앱진입", "", handleName, 0, 0, 0, 0);
             imageMatching.ImageMatchClick("예외처리", "", handleName, 0, 0, 0, 0);
+            imageMatching.ImageMatchClick("앱다시열기", "", handleName, 0, 0, 0, 0);
             if (imageMatching.ImageMatch("메인홈", "", handleName, 0, 0, 0, 0))
             {
                 mouseUtile.InClick(472, 865); // 최근본상품클릭
