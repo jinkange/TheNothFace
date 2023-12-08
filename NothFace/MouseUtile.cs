@@ -27,11 +27,11 @@ namespace NothFace
     }
         
       
-    private const float MOUSE_SMOOTH = 200f;
+    private const float MOUSE_SMOOTH = 10f;
         
         public void MoveTo(int targetX, int targetY)
     {
-        var targetPosition = new System.Drawing.Point(targetX+addX, targetY);
+        var targetPosition = new System.Drawing.Point(targetX, targetY);
         var curPos = Cursor.Position;
 
         var diffX = targetPosition.X - curPos.X;
@@ -43,7 +43,6 @@ namespace NothFace
             float x = curPos.X + (diffX / MOUSE_SMOOTH * i);
             float y = curPos.Y + (diffY / MOUSE_SMOOTH * i);
             Cursor.Position = new System.Drawing.Point((int)x, (int)y);
-            Thread.Sleep(1);
         }
 
         if (Cursor.Position != targetPosition)
@@ -55,7 +54,7 @@ namespace NothFace
 
         public void wheelDown() {
             // 120은 휠을 한 번 돌린 크기입니다. 다른 값을 사용할 수 있습니다.
-            int delta = -120;
+            int delta = -360;
             // 마우스 휠을 내리는 이벤트를 발생시킵니다.
             mouse_event(MOUSEEVENTF_WHEEL, 0, 0, delta, 0);
         }

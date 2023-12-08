@@ -12,13 +12,15 @@ namespace NothFace
         private KeyboardUtile keyboardUtile;
         private WindowUtile windowUtile;
         private ImageMatching imageMatching;
-        System.Threading.Thread TrackWorkthread;
         string handleName;
         string macroId;
         string password;
         string size;
         int count;
         int x = 0, y = 0, width = 0, height = 0;
+
+        System.Threading.Thread StartMacro;
+        
         public MainForm()
         {
             InitializeComponent();
@@ -109,10 +111,24 @@ namespace NothFace
                 Thread.Sleep(1000);
                 //사이즈 클릭 // 1초 대기
                 imageMatching.ImageMatchClick(size, "", handleName, 0, 0, 0, 0);
+
                 Thread.Sleep(1000);
                 //바로구매 재클릭 //
                 imageMatching.ImageMatchClick("바로구매2", "", handleName, 0, 0, 0, 0);
-                Credit();
+                Thread.Sleep(1000);
+                if (imageMatching.ImageMatch("사이즈없음", "", handleName, 0, 0, 0, 0))
+                {
+                    imageMatching.ImageMatchClick("사이즈없음닫기", "", handleName, 0, 0, 0, 0);
+                    Thread.Sleep(500);
+                    imageMatching.ImageMatchClick("옵션닫기", "", handleName, 0, 0, 0, 0);
+                    Thread.Sleep(500);
+                    goto Newfix;
+                }
+                else { 
+                    Credit();
+                }
+                
+
             }
             if (imageMatching.ImageMatch("품절", "", handleName, 0, 0, 0, 0))
             {
@@ -126,65 +142,71 @@ namespace NothFace
             {
                 Thread.Sleep(1000);
             }
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             mouseUtile.InClick(130, 300);//첫번째상품클릭
             goto Watitng;
         }
 
         private void Credit()
         {
-            Scroll1:
             //주문 결제창 확인(배송비안내)
             while (!imageMatching.ImageMatch("배송비안내", "", handleName, 0, 0, 0, 0))
                 Thread.Sleep(1000);
+            Scroll1:
             // 마우스 해당 화면 중간으로 이동, 휠 내리기
             mouseUtile.MoveTo(width / 2 + x, height / 2);
             mouseUtile.wheelDown();
-            Thread.Sleep(1000);
-            if (imageMatching.ImageMatch("결제하기1", "", handleName, 0, 0, 0, 0))
+            Thread.Sleep(2000);
+            mouseUtile.wheelDown();
+            if (imageMatching.ImageMatch("배송비안내", "", handleName, 0, 0, 0, 0))
             {
+                goto Scroll1;
+                
+            }
+            else if(imageMatching.ImageMatch("결제하기1", "", handleName, 0, 0, 0, 0)){
                 imageMatching.ImageMatchClick("결제하기1", "", handleName, 0, 0, 0, 0);
             }
-            else {
-                Thread.Sleep(1000);
-                goto Scroll1;
-            }
 
 
-            Scroll2:
+            
             // 결제하기 버튼 확인하면 클릭 이 3가지 반복
             while (!imageMatching.ImageMatch("쿠폰", "", handleName, 0, 0, 0, 0))
                 Thread.Sleep(1000);
+            Scroll2:
             mouseUtile.MoveTo(width / 2 + x, height / 2);
             mouseUtile.wheelDown();
-            Thread.Sleep(1000);
-            if (imageMatching.ImageMatch("동의합니다", "", handleName, 0, 0, 0, 0))
+            Thread.Sleep(2000);
+            mouseUtile.wheelDown();
+            if (imageMatching.ImageMatch("쿠폰", "", handleName, 0, 0, 0, 0))
             {
-                Thread.Sleep(500);
-                imageMatching.ImageMatchClick("동의합니다", "", handleName, 0, 0, 0, 0);
+                goto Scroll2;
             }
             else {
-                Thread.Sleep(1000);
-                goto Scroll2;
+                if (imageMatching.ImageMatch("동의합니다", "", handleName, 0, 0, 0, 0)) {
+                    imageMatching.ImageMatchClick("동의합니다", "", handleName, 0, 0, 0, 0);
+                }
             }
             imageMatching.ImageMatchClick("주문하기", "", handleName, 0, 0, 0, 0);
 
 
-            Scroll3:
+            
             while (!imageMatching.ImageMatch("페이확인", "", handleName, 0, 0, 0, 0))
                 Thread.Sleep(1000);
+            Scroll3:
             mouseUtile.MoveTo(width / 2 + x, height / 2);
             mouseUtile.wheelDown();
-            Thread.Sleep(1000);
-            if (imageMatching.ImageMatch("동의합니다2", "", handleName, 0, 0, 0, 0))
+            Thread.Sleep(2000);
+            mouseUtile.wheelDown();
+            if (imageMatching.ImageMatch("페이확인", "", handleName, 0, 0, 0, 0))
             {
-                Thread.Sleep(1000);
-                imageMatching.ImageMatchClick("네이버결제하기", "", handleName, 0, 0, 0, 0);
+                goto Scroll3;
             }
             else
             {
-                Thread.Sleep(1000);
-                goto Scroll3;
+                if (imageMatching.ImageMatch("네이버결제하기", "", handleName, 0, 0, 0, 0))
+                {
+                    imageMatching.ImageMatchClick("네이버결제하기", "", handleName, 0, 0, 0, 0);
+                }
             }
 
             while (!imageMatching.ImageMatch("네이버비밀번호창확인", "", handleName, 0, 0, 0, 0))
@@ -236,12 +258,23 @@ namespace NothFace
 
         private void Start_Click(object sender, EventArgs e)
         {
-            Main();
+            StartMacro = new Thread(new ThreadStart(Main));
+            StartMacro.ApartmentState = ApartmentState.STA;
+            StartMacro.Start();
         }
 
         private void Stop_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                StartMacro.Suspend();
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine("b1c1");
+                Console.WriteLine(err.Message, ToString());
+            }
+            
         }
 
         private void count_Click(object sender, EventArgs e)

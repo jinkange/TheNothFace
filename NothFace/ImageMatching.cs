@@ -229,7 +229,7 @@ namespace NothFace
                     OpenCvSharp.Point minloc, maxloc;
                     Cv2.MinMaxLoc(res, out minval, out maxval, out minloc, out maxloc);
                     Debug.WriteLine("이미시 매칭률 : " + maxval);
-                    if (maxval >= 0.8)
+                    if (maxval >= 0.9)
                     {
                         mouseUtile.InClick(maxloc.X + startx, maxloc.Y + starty);
                         ScreenMat.Dispose();
