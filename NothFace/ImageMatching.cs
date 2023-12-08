@@ -25,6 +25,7 @@ namespace NothFace
         }
         public bool ImageMatchClick(string name, string url, string AppPlayerName, int x, int y, int width, int height)
         {
+            Debug.WriteLine(name + " 클릭");
             try
             {
                 IntPtr findwindow = FindWindow(null, AppPlayerName);

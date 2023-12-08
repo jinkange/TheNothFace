@@ -153,6 +153,7 @@
             Controls.Add(Start);
             Name = "MainForm";
             Text = "TheNothFace";
+            FormClosing += TNF_FormClosing;
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
