@@ -14,8 +14,8 @@ namespace NothFace
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         internal static extern bool PrintWindow(IntPtr hWnd, IntPtr hdcBlt, int nFlags);
-        public ImageMatching(TextBox id) {
-            this.macroId = id.Text;
+        public ImageMatching(string id) {
+            this.macroId = id;
             mouseUtile = new MouseUtile(id);
         }
         private void errorCheck() {
@@ -25,7 +25,6 @@ namespace NothFace
         }
         public bool ImageMatchClick(string name, string url, string AppPlayerName, int x, int y, int width, int height)
         {
-            Debug.WriteLine(name + " 클릭");
             try
             {
                 IntPtr findwindow = FindWindow(null, AppPlayerName);
@@ -132,7 +131,6 @@ namespace NothFace
 
         public bool ImageMatch(string name, string url, string AppPlayerName, int startx, int starty, int width, int height)
         {
-            Debug.WriteLine(name + "찾기");
             try
             {
                 IntPtr findwindow = FindWindow(null, AppPlayerName);
@@ -229,7 +227,6 @@ namespace NothFace
                     double minval, maxval = 0;
                     OpenCvSharp.Point minloc, maxloc;
                     Cv2.MinMaxLoc(res, out minval, out maxval, out minloc, out maxloc);
-                    Debug.WriteLine("이미시 매칭률 : " + maxval);
                     if (maxval >= 0.9)
                     {
                         mouseUtile.InClick(maxloc.X + startx, maxloc.Y + starty);
@@ -277,7 +274,6 @@ namespace NothFace
                     double minval, maxval = 0;
                     OpenCvSharp.Point minloc, maxloc;
                     Cv2.MinMaxLoc(res, out minval, out maxval, out minloc, out maxloc);
-                    Debug.WriteLine("이미시 매칭률 : " + maxval);
                     if (maxval >= 0.9)
                     {
                         Random Rand_Time = new Random();
