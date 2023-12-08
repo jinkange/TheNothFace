@@ -101,6 +101,7 @@ namespace NothFace
         Watitng:
             Thread.Sleep(100);
             imageMatching.ImageMatchClick("æ€¡¯¿‘", "", handleName, 0, 0, 0, 0);
+            imageMatching.ImageMatchClick("æ€¥›±‚", "", handleName, 0, 0, 0, 0);
             imageMatching.ImageMatchClick("øπø‹√≥∏Æ", "", handleName, 0, 0, 0, 0);
             imageMatching.ImageMatchClick("æ€¥ŸΩ√ø≠±‚", "", handleName, 0, 0, 0, 0);
             if (imageMatching.ImageMatch("∏ﬁ¿Œ»®", "", handleName, 0, 0, 0, 0))
