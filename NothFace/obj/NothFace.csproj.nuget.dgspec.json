@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\개인자료\\개인개발\\NothFace\\NothFace\\NothFace.csproj": {}
+    "C:\\Users\\jinkange\\Desktop\\my_project\\TheNothFace\\NothFace\\NothFace.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\개인자료\\개인개발\\NothFace\\NothFace\\NothFace.csproj": {
+    "C:\\Users\\jinkange\\Desktop\\my_project\\TheNothFace\\NothFace\\NothFace.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\개인자료\\개인개발\\NothFace\\NothFace\\NothFace.csproj",
+        "projectUniqueName": "C:\\Users\\jinkange\\Desktop\\my_project\\TheNothFace\\NothFace\\NothFace.csproj",
         "projectName": "NothFace",
-        "projectPath": "C:\\Users\\User\\Desktop\\개인자료\\개인개발\\NothFace\\NothFace\\NothFace.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\개인자료\\개인개발\\NothFace\\NothFace\\obj\\",
+        "projectPath": "C:\\Users\\jinkange\\Desktop\\my_project\\TheNothFace\\NothFace\\NothFace.csproj",
+        "packagesPath": "C:\\Users\\jinkange\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jinkange\\Desktop\\my_project\\TheNothFace\\NothFace\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jinkange\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -68,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
