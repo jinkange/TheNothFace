@@ -52,7 +52,9 @@ namespace NothFace
                 password = passwordBox3.Text;
                 size = sizeBox3.Text;
             }
-
+            Debug.WriteLine(id);
+            Debug.WriteLine(password);
+            Debug.WriteLine(size);
             Thread.Sleep(10);
             if (macroId == "")
             {
