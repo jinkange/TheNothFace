@@ -146,7 +146,7 @@ namespace NothFace
                     }
                     catch (Exception e)
                     {
-                        Debug.WriteLine("이미지 경로 찾기 실패");
+                        Debug.WriteLine("이미지 경로 찾기 실패" + name);
                         Debug.WriteLine(e.Message, ToString());
                         check_img = new Bitmap(10, 10);
                         bmp = new Bitmap(10, 10);

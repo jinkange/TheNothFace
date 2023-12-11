@@ -25,8 +25,8 @@ namespace NothFace
         {
 
             string macroId = id;
-            string password = "";
-            string size = "";
+            string password= "";
+            string size="";
             int x = 0, y = 0, width = 0, height = 0;
             macroId = id;
             string handleName = "TheNothFace" + macroId;
@@ -95,13 +95,15 @@ namespace NothFace
             IntPtr findwindow = FindWindow(null, handleName);
             WindowUtile.MoveWindow(findwindow, x, y, width, height, false);
 
-            Watiting(handleName, password, height, width, size, x, imageMatching, mouseUtile);
+            Watiting(handleName, password, height, width, size, x,y, imageMatching, mouseUtile);
         }
 
-        private void Watiting(string handleName, string password, int height, int width, string size, int x, ImageMatching imageMatching, MouseUtile mouseUtile)
+        private void Watiting(string handleName, string password, int height, int width, string size, int x,int y,ImageMatching imageMatching, MouseUtile mouseUtile)
         {
         Watitng:
             Thread.Sleep(100);
+            IntPtr findwindow = FindWindow(null, handleName);
+            WindowUtile.MoveWindow(findwindow, x, y, width, height, false);
             imageMatching.ImageMatchClick("앱진입", "", handleName, 0, 0, 0, 0);
             imageMatching.ImageMatchClick("앱닫기", "", handleName, 0, 0, 0, 0);
             imageMatching.ImageMatchClick("예외처리", "", handleName, 0, 0, 0, 0);
@@ -120,34 +122,51 @@ namespace NothFace
                 imageMatching.ImageMatchClick("에러회피", "", handleName, 0, 0, 0, 0);
                 MessageBox.Show("에러");
             }
-            if (imageMatching.ImageMatch("바로구매", "", handleName, 0, 0, 0, 0))
+            if (imageMatching.ImageMatch("바로구매", "", handleName, 0, 0, 0, 0) &&
+                imageMatching.ImageMatch("바로구매체크", "", handleName, 0, 0, 0, 0))
             {
-                imageMatching.ImageMatchClick("바로구매2", "", handleName, 0, 0, 0, 0);
-                //화면 변경 확인(옵션선택)
-                while (!imageMatching.ImageMatch("옵션선택해주세요", "", handleName, 0, 0, 0, 0))
-                {
-                    Thread.Sleep(500);
-                }
-                Thread.Sleep(1000);
-                //옵션 클릭 // 1초 대기
-                imageMatching.ImageMatchClick("옵션선택해주세요", "", handleName, 0, 0, 0, 0);
-                Thread.Sleep(1000);
-                //사이즈 클릭 // 1초 대기
-                imageMatching.ImageMatchClick(size, "", handleName, 0, 0, 0, 0);
-
-                Thread.Sleep(1000);
-                //바로구매 재클릭 //
-                imageMatching.ImageMatchClick("바로구매2", "", handleName, 0, 0, 0, 0);
-                Thread.Sleep(1000);
-                if (imageMatching.ImageMatch("사이즈없음", "", handleName, 0, 0, 0, 0))
-                {
-                    imageMatching.ImageMatchClick("사이즈없음닫기", "", handleName, 0, 0, 0, 0);
-                    Thread.Sleep(500);
-                    imageMatching.ImageMatchClick("옵션닫기", "", handleName, 0, 0, 0, 0);
-                    Thread.Sleep(500);
-                    mouseUtile.InClick(472, 865);
-                }
+                imageMatching.ImageMatchClick("바로구매", "", handleName, 0, 0, 0, 0);
             }
+
+            if (imageMatching.ImageMatch("옵션초기화면", "", handleName, 0, 0, 0, 0))
+            {
+                imageMatching.ImageMatchClick("옵션선택해주세요", "", handleName, 0, 0, 0, 0);
+                //선택이 안됐다 ?
+            }
+            if (imageMatching.ImageMatch("사이즈창 확인", "", handleName, 0, 0, 0, 0))
+            {
+                imageMatching.ImageMatchClick(size, "", handleName, 0, 0, 0, 0);
+                Thread.Sleep(1000);
+                imageMatching.ImageMatchClick("바로구매2", "", handleName, 0, 0, 0, 0);
+                Thread.Sleep(1000);
+            }
+            if (imageMatching.ImageMatch("사이즈없음", "", handleName, 0, 0, 0, 0))
+            {
+                imageMatching.ImageMatchClick("사이즈없음닫기", "", handleName, 0, 0, 0, 0);
+                Thread.Sleep(500);
+                imageMatching.ImageMatchClick("옵션닫기", "", handleName, 0, 0, 0, 0);
+                Thread.Sleep(500);
+                mouseUtile.InClick(472, 865);
+            }
+            if (imageMatching.ImageMatch("재고가없습니다", "", handleName, 0, 0, 0, 0))
+            {
+                imageMatching.ImageMatchClick("재고가없습니다확인", "", handleName, 0, 0, 0, 0);
+                Thread.Sleep(500);
+                imageMatching.ImageMatchClick("옵션닫기", "", handleName, 0, 0, 0, 0);
+                Thread.Sleep(500);
+                mouseUtile.InClick(472, 865);
+            }
+            if (imageMatching.ImageMatch("팅김", "", handleName, 0, 0, 0, 0))
+            {
+                imageMatching.ImageMatchClick("팅김확인", "", handleName, 0, 0, 0, 0);
+                Thread.Sleep(500);
+                imageMatching.ImageMatchClick("옵션닫기", "", handleName, 0, 0, 0, 0);
+                Thread.Sleep(500);
+                imageMatching.ImageMatchClick("뒤로가기", "", handleName, 0, 0, 0, 0);
+                Thread.Sleep(300);
+                imageMatching.ImageMatchClick("뒤로가기", "", handleName, 0, 0, 0, 0);
+            }
+
             if (imageMatching.ImageMatch("품절", "", handleName, 0, 0, 0, 0))
             {
                 mouseUtile.InClick(472, 865);
@@ -177,6 +196,7 @@ namespace NothFace
             imageMatching.ImageMatchClick("결제하기1", "", handleName, 0, 0, 0, 0);
             imageMatching.ImageMatchClick("결제하기2", "", handleName, 0, 0, 0, 0);
             imageMatching.ImageMatchClick("동의합니다", "", handleName, 0, 0, 0, 0);
+            Thread.Sleep(1000);
             if (imageMatching.ImageMatch("동의안함", "", handleName, 0, 0, 0, 0))
             {
                 imageMatching.ImageMatchClick("동의안함ok", "", handleName, 0, 0, 0, 0);
