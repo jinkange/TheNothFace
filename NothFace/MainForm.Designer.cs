@@ -148,6 +148,7 @@
             passwordBox2.PlaceholderText = "6자리숫자";
             passwordBox2.Size = new Size(100, 23);
             passwordBox2.TabIndex = 2;
+            passwordBox2.TextChanged += passwordBox2_TextChanged;
             // 
             // label2
             // 
@@ -195,6 +196,7 @@
             passwordBox3.PlaceholderText = "6자리숫자";
             passwordBox3.Size = new Size(100, 23);
             passwordBox3.TabIndex = 2;
+            passwordBox3.TextChanged += passwordBox3_TextChanged;
             // 
             // label4
             // 
