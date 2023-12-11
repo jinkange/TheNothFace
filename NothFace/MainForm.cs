@@ -278,5 +278,15 @@ namespace NothFace
         {
 
         }
+
+        private void passwordBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void passwordBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
